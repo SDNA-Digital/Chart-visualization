@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 600px; height: 600; display: inline-block; margin: 30px;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div style="width: 400px; height: 400; display: inline-block; margin: 30px;">
+          <canvas id="mySecondChart"></canvas> 
+    </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+        const ctx = document.getElementById('myChart');
+        const ctx2 = document.getElementById('mySecondChart');
+
+
+const legendas = []
+const CountAreas = []
+
+const endPoint = "http://127.0.0.1:8000/dataJson/"
+
+const result = fetch(endPoint)
+  .then(res => res.json())
+  .then(dados =>{
+    dados.map(item => {
+      legendas.push(item.Area)
+      CountAreas.push(item.QtdeIncidentes)
+      chart_1.update()
+      chart_2.update()
+    }) 
+  })  
+
+console.log(legendas)
+console.log(CountAreas)
+
+ let chart_1 = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: legendas,
+    datasets: [{
+      label: 'Incidentes por area',
+      data: CountAreas,
+      borderWidth: 1,
+      backgroundColor: ['rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(201, 203, 207, 0.2)'],
+    borderColor: '#000' 
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+let chart_2 = new Chart(ctx2, {
+  type: 'doughnut',
+  data: {
+    labels: legendas,
+    datasets: [{
+      label: 'Incidentes por area',
+      data: CountAreas,
+      borderWidth: 1,
+      backgroundColor: ['rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 205, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(201, 203, 207, 0.2)'],
+    borderColor: '#000' 
+    }],
+
+}});
+
+  </script>
+         
+</body>
+</html>
