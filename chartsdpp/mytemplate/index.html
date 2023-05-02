@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,48 +15,39 @@
     </div>
       
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
+
         const ctx = document.getElementById('myChart');
-const ctx2 = document.getElementById('mySecondChart');
+        const ctx2 = document.getElementById('mySecondChart');
 
-const ChartData = [
-    {
-       legenda: "Marketing",
-       count: 18
-    },
-    {  
-       legenda: "Financeiro",
-       count: 10
-   
-    },
-    {  
-       legenda: "Operacional",
-       count: 20
-   
-    },
-    {  
-       legenda: "Juridico",
-       count: 13
-   
-    },
-    {  
-       legenda: "Recursos humanos",
-       count: 7
-   
-    } 
-   ]
 
-const legendasArea = ChartData.map(teste => teste.legenda)
-const countArea = ChartData.map(teste => teste.count)
-  
-   
-new Chart(ctx, {
+const legendas = []
+
+const x = [15,5,9]
+
+const endPoint = "http://127.0.0.1:8000/dataJson/"
+
+const result = fetch(endPoint)
+  .then(res => res.json())
+  .then(dados =>{
+    dados.map(item => {
+      legendas.push(item.Area)
+      chart_1.update()
+      chart_2.update()
+    }) 
+  })  
+
+console.log(legendas)
+console.log(x)
+
+ let chart_1 = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: legendasArea,
+    labels: legendas,
     datasets: [{
       label: 'Incidentes por area',
-      data: countArea,
+      data: [12, 19, 3, 5, 2,9],
       borderWidth: 1,
       backgroundColor: ['rgba(255, 99, 132, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
@@ -78,13 +68,13 @@ new Chart(ctx, {
   }
 });
 
-new Chart(ctx2, {
+let chart_2 = new Chart(ctx2, {
   type: 'doughnut',
   data: {
-    labels: ['financeiro', 'juridico', 'marketing', 'operacional', 'recursos humanos', 'comercial'],
+    labels: legendas,
     datasets: [{
       label: 'Incidentes por area',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [12, 19, 3, 5, 2,9],
       borderWidth: 1,
       backgroundColor: ['rgba(255, 99, 132, 0.2)',
                         'rgba(255, 159, 64, 0.2)',
@@ -97,7 +87,8 @@ new Chart(ctx2, {
     }],
 
 }});
-    </script>
+
+  </script>
          
 </body>
 </html>
