@@ -1,0 +1,16 @@
+.Chart1 {
+
+    width: 600px;
+    height: 600;
+    display: inline-block; 
+    margin: 30px;
+}
+
+.Chart2 {
+
+    width: 400px;
+    height: 400;
+    display: inline-block; 
+    margin: 30px;
+}
+
