@@ -1,3 +1,4 @@
+
 .Chart1 {
 
     width: 600px;
@@ -22,14 +23,65 @@
     margin: 30px;
 }
 
-#Chart4 {
 
-    width: 150px;
+
+#Chart5 {
+
+    width: 700px;
     height: 400;
-    display: inline-block; 
     margin: 30px;
-    background-color:beige;
-    font-size: 70px;
-    text-align: center;
+    display: inline-block; 
 }
 
+#Chart6 {
+
+    width: 700px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+}
+
+.botao {
+    text-align: center; 
+}
+
+#Chart4 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 70px;
+
+}
+
+#Chart7 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 70px;
+}
+
+#Chart8 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+    text-align: center;
+    font-size: 70px;
+}
+
+#Chart9 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+    text-align: center;
+    font-size: 70px;
+}
