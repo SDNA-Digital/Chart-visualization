@@ -3,5 +3,13 @@
     width: 550px;
     height: 600px;
     display: inline-block; 
-    margin: 30px;
+    margin: 15px;
+}
+
+.Card1 {
+
+    width: 400px;
+    height: 600px;
+    display: inline-block; 
+    margin: 15px;
 }
