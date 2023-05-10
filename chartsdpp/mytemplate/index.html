@@ -8,24 +8,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <div class="Chart1">
-        <canvas id="myChart"></canvas>
-    </div>
-    <div class="Chart2">
-          <canvas id="mySecondChart"></canvas> 
-    </div>
-    <div class="Chart3">
-        <canvas id="mythirdChart"></canvas>
-    </div>
-    <div>
-        <p>Leis e Regulamentações Monitoradas</p>
-        <div id="Chart4">
+    <div class="row">
+        <div class="col">
+            <div class="Chart1">
+                <canvas id="myChart"></canvas>
+            </div>
         </div>
-    </div>  
+        <div class="col">
+            <div class="Chart2">
+                <canvas id="mySecondChart"></canvas> 
+            </div>
+        </div>
+        <div class="col">
+            <div class="Chart3">
+                <canvas id="mythirdChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Leis e Regulamentações Monitoradas</p>
+            <div id="Chart4"></div>
+        </div>
+        <div class="col">
+            <p>Quantidade processos mapeados</p>
+            <div id="Chart5"></div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
-         
 </body>
 </html>

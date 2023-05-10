@@ -2,6 +2,7 @@ const ctx = document.getElementById('myChart');
 const ctx2 = document.getElementById('mySecondChart');
 const ctx3 = document.getElementById('mythirdChart');
 const ctx4 = document.getElementById('Chart4');
+const ctx5 = document.getElementById('Chart5');
 
 
 const legendas = []
@@ -13,6 +14,7 @@ let nmbrStatus =[0,0,0]
 const endPoint = "http://127.0.0.1:8000/dataJson/"
 const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
 const normas = "http://127.0.0.1:8000/Dash_Normas/"
+const Card_Processos = "http://127.0.0.1:8000/Card_Processos/"
 
 const result = fetch(endPoint)
 
@@ -52,6 +54,12 @@ const resultNormas = fetch(normas)
     ctx4.innerHTML = dados[0].Qtdnormas
 })
 
+const resultProcessos = fetch(Card_Processos)
+.then(res => res.json())
+.then(dados =>{
+    console.log(dados)
+    ctx5.innerHTML = dados[0].qtde_processos
+})
 
 let chart_1 = new Chart(ctx, {
 type: 'bar',
