@@ -1,8 +1,10 @@
-const ctx = document.getElementById('Card1');
+const ctx = document.getElementById('graph1');
+const ctx2 = document.getElementById('graph2')
+const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
+const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessoxArea/"
 
-const endPoint = "http://127.0.0.1:8000/Dash_Processo/"
+const result1 = fetch(endPoint1)
 
-const result = fetch(endPoint)
 
 .then(response => response.json())
 .then(data => {
@@ -12,8 +14,9 @@ const result = fetch(endPoint)
   const altoData = data.map(obj => obj.Alto)
   const muitoBaixoData = data.map(obj => obj['Muito Baixo'])
   const muitoAltoData = data.map(obj => obj['Muito Alto'])
+  //graph1.update()
 
-  const chartData = {
+  const chartData1 = {
     labels: months,
     datasets: [
       {
@@ -45,7 +48,7 @@ const result = fetch(endPoint)
   };
   const chartConfig = {
     type: 'bar',
-    data: chartData,
+    data: chartData1,
     options: {
       responsive: true,
       plugins: {
@@ -66,6 +69,6 @@ const result = fetch(endPoint)
       },
     },
   };
-  const Card1 = new Chart(document.getElementById('Card1'), chartConfig);
+  const graph1 = new Chart(document.getElementById('graph1'), chartConfig);
 })
 .catch(error => console.error(error));
