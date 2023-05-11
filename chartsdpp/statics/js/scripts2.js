@@ -17,7 +17,10 @@ let CardTituloDiv = document.getElementById("CardTituloDiv");
 CardTituloDiv.innerHTML = CardTitulo;
 
 })
+let CardTitulo2 = "Quantidade de processos por nivel de risco";
+let CardTituloDiv2 = document.getElementById("CardTituloDiv2");
 
+CardTituloDiv2.innerHTML = CardTitulo2;
 const result1 = fetch(endPoint1)
 .then(response => response.json())
 .then(data => {
@@ -84,8 +87,11 @@ const result1 = fetch(endPoint1)
 })
 .catch(error => console.error(error));
 ///////////////////////////////////////
-const result2 = fetch(endPoint2)
+let CardTitulo3 = "Quantidade de processos por nivel de risco x Area";
+let CardTituloDiv3 = document.getElementById("CardTituloDiv3");
 
+CardTituloDiv3.innerHTML = CardTitulo3;
+const result2 = fetch(endPoint2)
 .then(response => response.json())
 .then(data => {
   const areasID =   {
