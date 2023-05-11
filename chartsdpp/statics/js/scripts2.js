@@ -11,6 +11,11 @@ const result3 = fetch(endPoint3)
 .then(data => {
   console.log(data)
 ctx3.innerHTML = data[0].Processos_mapeados
+let CardTitulo = "Quantidade de processos mapeados";
+let CardTituloDiv = document.getElementById("CardTituloDiv");
+
+CardTituloDiv.innerHTML = CardTitulo;
+
 })
 
 const result1 = fetch(endPoint1)
@@ -136,6 +141,7 @@ const result2 = fetch(endPoint2)
     type: 'bar',
     data: chartData2,
     options: {
+      indexAxis: 'y',
       responsive: true,
       plugins: {
         legend: {

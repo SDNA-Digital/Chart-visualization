@@ -1,15 +1,50 @@
-.CardStyle {
-
-    width: 550px;
-    height: 600px;
-    display: inline-block; 
-    margin: 15px;
-}
-
-.Card1 {
-
+.imagem {
     width: 400px;
-    height: 600px;
-    display: inline-block; 
-    margin: 15px;
+    height: 265px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -20px;
+}
+.card {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 25%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35%;
+}
+.card-value {
+    font-size: 35px;
+    color: #0a0a0a;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+}
+.CardStyle {
+    display: inline-block;
+    justify-content: center;
+    padding: 5px;
+    width: 48%;
+    height: 60%;
+    margin: 5px;
+    border-radius: 10px;
+}
+.string1 {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+    font-family: Arial, sans-serif;
+}
+.DivLine1 {
+    width: 90%;
+    height: 800px;
 }
