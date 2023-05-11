@@ -1,10 +1,13 @@
-
+body{
+    background-color: #F5F5F5;
+}
 .Chart1 {
-
-    width: 600px;
-    height: 600;
-    display: inline-block; 
-    margin: 30px;
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    background-color: cadetblue;
 }
 
 .Chart2 {
@@ -25,25 +28,15 @@
 
 
 
-#Chart5 {
+.tables {
 
-    width: 700px;
-    height: 400;
-    margin: 30px;
+    width: 100%;
+    height: 400px;
     display: inline-block; 
+    overflow-y:auto;
+    max-height:400px;
 }
 
-#Chart6 {
-
-    width: 700px;
-    height: 400;
-    margin: 30px;
-    display: inline-block; 
-}
-
-.botao {
-    text-align: center; 
-}
 
 #Chart4 {
 
@@ -56,32 +49,16 @@
 
 }
 
-#Chart7 {
-
+.Cartao{
     width: 200px;
     height: 400;
     margin: 30px;
     display: inline-block;
     text-align: center;
-    font-size: 70px;
+    
 }
 
-#Chart8 {
-
-    width: 200px;
-    height: 400;
-    margin: 30px;
-    display: inline-block; 
-    text-align: center;
-    font-size: 70px;
-}
-
-#Chart9 {
-
-    width: 200px;
-    height: 400;
-    margin: 30px;
-    display: inline-block; 
+.TextoCartao{
     text-align: center;
     font-size: 70px;
 }

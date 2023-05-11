@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import Chart
+from .views import Dash_IncidenteArea
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',Chart)
+    path('home/',Chart),
+    path('IncidenteArea/',Dash_IncidenteArea)
+
 ]

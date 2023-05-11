@@ -11,67 +11,103 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="Chart1">
-        <canvas id="myChart"></canvas>
-    </div>
-    <div class="Chart2">
-          <canvas id="mySecondChart"></canvas> 
-    </div>
-    <div class="Chart3">
-        <canvas id="mythirdChart"></canvas>
-    </div>
-    <div class="botao">
-        <p>Leis e Regulamentações Monitoradas</p>
-        <div id="Chart4">
-        </div>
-    </div> 
-    <div id="Chart5">
-    <table class="table table-striped" id="tabela">
-        <tr>
-          <td>Nome da Lei/Regulamentação</td>
-          <td>Qtde Usuarios</td>
-        </tr>
-      </table>
-    </div>
-    <div id="Chart6">
-        <table class="table table-striped" id="tabela2">
-            <tr>
-              <td>ID</td>
-              <td>Nome do Documento</td>
-              <td>Válido Até</td>
-            </tr>
-          </table>
-        </div>
-        <div class="botao">
-            <p>Demandas em atendimento</p>
-            <div id="Chart7">
-            </div>
-        </div>
-        <div class="botao">
-            <p>Demandas em atraso</p>
-            <div id="Chart8">
-            </div>
-        </div>
-        <div class="botao">
-            <p>Demandas concluídas</p>
-            <div id="Chart9">
-            </div>
-        </div>
-        <div id="Chart5">
-            <table class="table table-striped" id="tabela3">
-                <tr>
-                  <td>ID</td>
-                  <td>Solicitação</td>
-                  <td>Responsável</td>
-                  <td>Prazo</td>
-                  <td>Status</td>
-                </tr>
-              </table>
-            </div>
-        
+  
+    <div class="container border p-5 text-left" style="gap: 60px;">
+      
+      Incidente X Area
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{% static 'js/scripts.js' %}"></script>
+        <div class="row border row">
+          <div class="col border" id="teste">
+            <div class="Chart1">
+              <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div class="col-4 border">
+          <div class="Chart2">
+            <canvas id="mySecondChart"></canvas> 
+        </div>
+    
+        </div>
+    </div>
+    <div class="row border">
+      <div class="col border">
+        <div class="Chart3">
+          <canvas id="mythirdChart"></canvas>
+        </div>
+      </div>
+      <div class="col border">
+        <div class="Cartao">
+          <p>Leis e Regulamentações Monitoradas</p>
+          <div id="Chart4" class="TextoCartao">
+          </div>
+      </div> 
+      </div>
+    </div>
+      <div class="row border">
+        <div class="tables">
+          <table  class="table table-hover"  id="tabela">
+              <tr>
+                <td>Nome da Lei/Regulamentação</td>
+                <td>Qtde Usuarios</td>
+              </tr>
+            </table>
+          </div>
+      </div>     
+    <div class="row border">    
+      <div class="col border">
+        <div class="tables">
+          <table class="table table-striped" id="tabela2">
+              <tr>
+                <td>ID</td>
+                <td>Nome do Documento</td>
+                <td>Válido Até</td>
+              </tr>
+            </table>
+          </div>
+      </div>
+    </div>
+   
+    <div class="row border">
+      <div class="col">
+        <div class="Cartao">
+          <p>Demandas em atendimento</p>
+          <div id="Chart7" class="TextoCartao">
+          </div>
+      </div>
+      </div>
+      <div class="col">
+        <div class="Cartao">
+          <p>Demandas em atraso</p>
+          <div id="Chart8" class="TextoCartao">
+          </div>
+      </div>
+      </div>
+      <div class="col">
+        <div class="Cartao">
+          <p>Demandas concluídas</p>
+          <div id="Chart9" class="TextoCartao">
+          </div>
+      </div>
+
+    </div>
+    <div class="row border">
+        <div class="tables">
+          <table  class="table table-striped" id="tabela3">
+              <tr>
+                <td>ID</td>
+                <td>Solicitação</td>
+                <td>Responsável</td>
+                <td>Prazo</td>
+                <td>Status</td>
+              </tr>
+            </table>
+          </div>
+    </div>
+        
+   </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="{% static 'js/scripts.js' %}"></script>
          
 </body>
 </html>
