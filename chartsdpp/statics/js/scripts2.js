@@ -217,28 +217,27 @@ const result4 = fetch(endPoint4)
       },
     ],
   };
-  const chartConfig = {
-    type: 'bar',
-    data: chartData3,
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'top',
-        },
-      },
-      scales: {
-        x: {
-          stacked: true,
-        },
-        y: {
-          stacked: true,
-          ticks: {
-            beginAtZero: true,
+    const chartConfig = {
+      type: 'bar',
+      data: chartData3,
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true,
+          },
+          y: {
+            stacked: true,
+            ticks: {
+              beginAtZero: true,
+            },
           },
         },
       },
-    },
-  };
-  const graph3 = new Chart(document.getElementById('graph3'), chartConfig);
-})
+      plugins: [ChartDataLabels],
+      legend: {
+        position: 'top',
+      }
+    };
+    const graph3 = new Chart(document.getElementById('graph3'), chartConfig);
+  })
