@@ -1,9 +1,11 @@
 const ctx = document.getElementById('graph1');
 const ctx2 = document.getElementById('graph2');
-const ctx3 = document.getElementById('Card1')
+const ctx3 = document.getElementById('Card1');
+const ctx4 = document.getElementById('graph3')
 const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
 const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessosxArea/"
 const endPoint3 = "http://127.0.0.1:8000/Card_ProcessosMapeados/"
+const endPoint4 = "http://127.0.0.1:8000/Dash_PlanosMitigantes/"
 
 
 const result3 = fetch(endPoint3)
@@ -87,6 +89,7 @@ const result1 = fetch(endPoint1)
 })
 .catch(error => console.error(error));
 ///////////////////////////////////////
+
 let CardTitulo3 = "Quantidade de processos por nivel de risco x Area";
 let CardTituloDiv3 = document.getElementById("CardTituloDiv3");
 
@@ -170,3 +173,72 @@ const result2 = fetch(endPoint2)
   const graph2 = new Chart(document.getElementById('graph2'), chartConfig);
 })
 .catch(error => console.error(error));
+
+let CardTitulo4 = "Quantidade de planos mitigantes por status";
+let CardTituloDiv4 = document.getElementById("CardTituloDiv4");
+
+CardTituloDiv4.innerHTML = CardTitulo4;
+const result4 = fetch(endPoint4)
+.then(response => response.json())
+.then(data => {
+  const months = data.map(obj => obj['mes_criacao'])
+  const naoiniciadoData = data.map(obj => obj['Nao iniciado'])
+  const emandamentoData = data.map(obj => obj['Em andamento'])
+  const emaprovacaoData = data.map(obj => obj['Em aprovacao'])
+  const concluidoData = data.map(obj => obj.Concluido)
+  const canceladoData = data.map(obj => obj.Cancelado)
+  const chartData3 = {
+    labels: months,
+    datasets: [
+      {
+        label: 'Nao iniciado',
+        data: naoiniciadoData,
+        backgroundColor: '#66bfec',
+      },
+      {
+        label: 'Em andamento',
+        data: emandamentoData,
+        backgroundColor: '#2499EA',
+      },
+      {
+        label: 'Em aprovacao',
+        data: emaprovacaoData,
+        backgroundColor: '#2483ea',
+      },
+      {
+        label: 'Concluido',
+        data: concluidoData,
+        backgroundColor: '#2839d9',
+      },
+      {
+        label: 'Cancelado',
+        data: canceladoData,
+        backgroundColor: '#d42f0c',
+      },
+    ],
+  };
+  const chartConfig = {
+    type: 'bar',
+    data: chartData3,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+      },
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      },
+    },
+  };
+  const graph3 = new Chart(document.getElementById('graph3'), chartConfig);
+})

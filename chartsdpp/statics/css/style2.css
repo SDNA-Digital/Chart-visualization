@@ -1,14 +1,11 @@
 .imagem {
     display: inline-block;
     justify-content: center;
-    padding: 5px;
     width: 28%;
     max-width: 100%;
     height: 60%;
     margin: 5px;
     border-radius: 10px;
-    padding-top: 2vw;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 26px, rgba(0, 0, 0, 0.12) 0px -6px 15px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .card {
     width: 100%;
@@ -35,17 +32,30 @@
 .CardStyle {
     display: inline-block;
     justify-content: center;
-    padding: 5px;
     width: 48%;
-    height: 60%;
+    height: 45%;
     margin: 5px;
     border-radius: 10px;
-    padding-top: 2vw;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 26px, rgba(0, 0, 0, 0.12) 0px -6px 15px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.CardStyleLine2 {
+    display: inline-block;
+    position: absolute;
+    justify-content: center;
+    width: 48%;
+    height: 45%;
+    margin: 5px;
+    border-radius: 10px;
+}
+.ContainerLine2 {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    max-height: 100%;
 }
 .string1 {
     width: 100%;
-    height: 2.5vw;
+    height: 1vw;
     display: inline-flex;
     justify-content: start;
     font-size: 1.05vw;
@@ -54,7 +64,7 @@
     font-family: Arial, sans-serif;
 }
 .string2 {
-    height: 2.5vw;
+    height: 1vw;
     display: inline-flex;
     justify-content: start;
     font-size: 1.05vw;
@@ -66,5 +76,4 @@
     width: 50%;
     top: 30%;
     position: absolute;
-
 }
