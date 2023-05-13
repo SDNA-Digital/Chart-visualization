@@ -1,3 +1,5 @@
 venv
-indev.html
+resultado.json
 __pycache__
+indev.py
+indev.html
