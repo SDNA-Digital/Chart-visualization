@@ -77,3 +77,90 @@
     top: 30%;
     position: absolute;
 }
+
+.Chart1 {
+
+    width: 600px;
+    height: 600;
+    display: inline-block; 
+    margin: 30px;
+}
+
+.Chart2 {
+
+    width: 400px;
+    height: 400;
+    display: inline-block; 
+    margin: 30px;
+}
+
+.Chart3 {
+
+    width: 400px;
+    height: 400;
+    display: inline-block; 
+    margin: 30px;
+}
+
+
+
+#Chart5 {
+
+    width: 700px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+}
+
+#Chart6 {
+
+    width: 700px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+}
+
+.botao {
+    text-align: center; 
+}
+
+#Chart4 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 70px;
+
+}
+
+#Chart7 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 70px;
+}
+
+#Chart8 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+    text-align: center;
+    font-size: 70px;
+}
+
+#Chart9 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block; 
+    text-align: center;
+    font-size: 70px;
+}
