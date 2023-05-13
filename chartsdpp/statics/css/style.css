@@ -2,12 +2,17 @@ body{
     background-color: #F5F5F5;
 }
 .Chart1 {
-    width: 400px;
+    width: 700px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
     margin-top: auto;
-    background-color: cadetblue;
+    background-color:#FFFFFF;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 30px;
 }
 
 .Chart2 {
@@ -22,7 +27,7 @@ body{
 
     width: 400px;
     height: 400;
-    display: inline-block; 
+    display: inline-block;
     margin: 30px;
 }
 

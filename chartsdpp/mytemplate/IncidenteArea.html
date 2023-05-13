@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="Chart1">
-        <canvas id="myChart"></canvas>
+    <div class="container border">
+        <div class="Chart1">
+            <p>IncidentexArea</p>
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
-
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -39,9 +41,9 @@
         let chart_1 = new Chart(ctx, {
     type: 'bar',
     data: {
-    labels: legendas,
+    labels:legendas,
     datasets: [{
-    label: 'Incidentes por area',
+    label:"IncidentexArea",
     data: CountAreas,
     borderWidth: 1,
     backgroundColor: ['#95bfe6',
@@ -55,12 +57,19 @@
     }]
     },
     options: {
+        
     scales: {
     y: {
     beginAtZero: true
     }
+    },
+    plugins: {
+          legend: {
+            display: false
+          }
     }
-    }
+    
+    } 
     });
 
     </Script>
