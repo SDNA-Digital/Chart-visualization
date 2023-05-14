@@ -1,0 +1,69 @@
+body{
+    background-color: #F5F5F5;
+}
+.Chart1 {
+    width: 700px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    background-color:#FFFFFF;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.Chart2 {
+
+    width: 400px;
+    height: 400;
+    display: inline-block; 
+    margin: 30px;
+}
+
+.Chart3 {
+
+    width: 400px;
+    height: 400;
+    display: inline-block;
+    margin: 30px;
+}
+
+
+
+.tables {
+
+    width: 100%;
+    height: 400px;
+    display: inline-block; 
+    overflow-y:auto;
+    max-height:400px;
+}
+
+
+#Chart4 {
+
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+    font-size: 70px;
+
+}
+
+.Cartao{
+    width: 200px;
+    height: 400;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.TextoCartao{
+    text-align: center;
+    font-size: 70px;
+}
