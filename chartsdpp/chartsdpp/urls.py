@@ -20,5 +20,5 @@ from .views import Chart
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('indev/',Chart)
+    path('ProcNivRisc/',Chart)
 ]

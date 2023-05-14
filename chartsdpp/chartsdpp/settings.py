@@ -54,7 +54,7 @@ ROOT_URLCONF = 'chartsdpp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['mytemplate'],
+        'DIRS': ['jscode/chartsdpp/mytemplate'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

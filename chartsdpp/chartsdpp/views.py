@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
 def Chart(request):
-    return render(request, 'indev.html')
+    return render(request,'jscode/chartsdpp/mytemplate/ProcNivRisc')
