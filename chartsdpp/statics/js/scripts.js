@@ -16,6 +16,10 @@ const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
 const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessosxArea/"
 const endPoint3 = "http://127.0.0.1:8000/Card_ProcessosMapeados/"
 const endPoint4 = "http://127.0.0.1:8000/Dash_PlanosMitigantes/"
+const endPoint = "http://127.0.0.1:8000/Dash_IncidenteArea/"
+const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
+const normas = "http://127.0.0.1:8000/Dash_Normas/" 
+const RadarCon = "http://127.0.0.1:8000/Dash_RadarConformidade/"
 
 const legendas = []
 const CountAreas = []
@@ -24,12 +28,6 @@ statTarefa = new Array ("","","Andamento","","Concluida")
 
 let nmbrStatus =[0,0,0]
 let nmbrStatusRadar =[0,0,0]
-
-
-const endPoint = "http://127.0.0.1:8000/dataJson/"
-const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
-const normas = "http://127.0.0.1:8000/Dash_Normas/" 
-const RadarCon = "http://127.0.0.1:8000/Dash_RadarConformidade/"
 
 const result = fetch(endPoint)
 
@@ -268,7 +266,7 @@ const result1 = fetch(endPoint1)
         },
     },
     };
-    const graph1 = new Chart(document.getElementById('graph1'), chartConfig);
+    const graph1 = new chart(document.getElementById('graph1'), chartConfig);
 })
 .catch(error => console.error(error));
 ///////////////////////////////////////

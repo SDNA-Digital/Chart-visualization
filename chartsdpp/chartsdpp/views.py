@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
+def Dash_ProcessoNivelRisco(request):
+    return render(request, 'ProcNivRisc.html')
+
+def Teste_Index(request):
+    return render(request, 'index.html')
+
 def Chart(request):
     return render(request, 'index.html')
 
@@ -17,7 +23,6 @@ def Dash_PoliticasManuaisTabela(request):
 
 def Dash_CartaoNorma(request):
     return render(request, 'CartaoNorma.html')
-
 
 def Dash_TabelaNorma(request):
     return render(request, 'TabelaNorma.html')

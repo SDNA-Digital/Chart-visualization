@@ -21,6 +21,8 @@ from .views import Dash_IncidenteArea,Dash_IncidenteAreaPizza
 from .views import Dash_PoliticasManuais, Dash_PoliticasManuaisTabela
 from .views import Dash_CartaoNorma,Dash_TabelaNorma
 from .views import Dash_DemandasCartao,Dash_DemandasTabela
+from .views import Dash_ProcessoNivelRisco
+from .views import Teste_Index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +34,8 @@ urlpatterns = [
     path('CartaoNorma/',Dash_CartaoNorma),
     path('TabelaNorma/',Dash_TabelaNorma),
     path('DemandasCartao/',Dash_DemandasCartao),
-    path('DemandasTabela/',Dash_DemandasTabela)
+    path('DemandasTabela/',Dash_DemandasTabela),
+    path('ProcNivRisc/', Dash_ProcessoNivelRisco),
+    path('TesteIndex/', Teste_Index)
 
 ]
