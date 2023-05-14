@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IncidenteArea</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container border">
+        <div class="Chart1">
+            <p>IncidentexArea</p>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <Script>
+
+        const ctx = document.getElementById('myChart');
+        const legendas = []
+        const CountAreas = []
+
+        const endPoint = "http://127.0.0.1:8000/dataJson/"
+
+        const result = fetch(endPoint)
+
+        .then(res => res.json())
+        .then(dados =>{
+        dados.map(item => {
+            legendas.push(item.Area)
+            CountAreas.push(item.QtdeIncidentes)
+            chart_1.update()
+            }) 
+        }) 
+
+        let chart_1 = new Chart(ctx, {
+    type: 'bar',
+    data: {
+    labels:legendas,
+    datasets: [{
+    label:"IncidentexArea",
+    data: CountAreas,
+    borderWidth: 1,
+    backgroundColor: ['#95bfe6',
+                '#78aee2',
+                '#439cea',
+                '#348fdf',
+                '#2284d9',
+                '#006ac5',
+                ],
+    borderColor: '#000' 
+    }]
+    },
+    options: {
+        
+    scales: {
+    y: {
+    beginAtZero: true
+    }
+    },
+    plugins: {
+          legend: {
+            display: false
+          }
+    }
+    
+    } 
+    });
+
+    </Script>
+</body>
+</html>
