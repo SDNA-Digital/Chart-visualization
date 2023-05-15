@@ -21,6 +21,7 @@ body{
     height: 400;
     display: inline-block; 
     margin: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .Chart3 {
@@ -29,6 +30,7 @@ body{
     height: 400;
     display: inline-block;
     margin: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 
@@ -40,6 +42,7 @@ body{
     display: inline-block; 
     overflow-y:auto;
     max-height:400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 
@@ -60,7 +63,7 @@ body{
     margin: 30px;
     display: inline-block;
     text-align: center;
-    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .TextoCartao{
@@ -71,41 +74,20 @@ body{
 .imagem {
     display: inline-block;
     justify-content: center;
-    width: 28%;
+    width: 35%;
     max-width: 100%;
-    height: 60%;
-    margin: 5px;
+    height: 35%;
+    margin-top: 25px;
     border-radius: 10px;
-}
-.card {
-    width: 100%;
-    max-width: 100%;
-    height: 250px;
-    margin-bottom: 25%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 35%;
-}
-.card-value {
-    font-size: 90px;
-    max-width: 100%;
-    color: #0a0a0a;
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-    width: 100%;
-    margin-top: 10%;
 }
 .CardStyle {
-    display: inline-block;
-    justify-content: center;
-    width: 95%;
-    height: 80%;
-    margin: 5px;
-    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    height: 90%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
 }
 .CardStyleLine2 {
     display: inline-block;
@@ -144,8 +126,46 @@ body{
     margin-top: 25px;
     font-family: Arial, sans-serif;
 }
-.elipseG {
-    width: 50%;
-    top: 30%;
+.ContainerCard{
     position: absolute;
+    margin-left: 25vw;
+    justify-content: center;
+    width: 50vw;
+    height: 25vw;
+    display: inline-flex;
+    bottom: 40%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1vw;
+}
+.cardelipse {
+    position: absolute;
+    margin: auto;
+    margin-bottom: 2vw;
+    justify-content: center;
+    display: inline-flex;
+    bottom: 0;
+    width: 25vw;
+    height: 13vw;
+}
+.cardvalue {
+    position: absolute;
+    margin: auto;
+    margin-bottom: 2vw;
+    justify-content: center;
+    display: inline-flex;
+    bottom: 0;
+    font-size: 2.5vw;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.title {
+    width: 100%;
+    height: 1.5vw;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    margin-top: 1vw;
 }
