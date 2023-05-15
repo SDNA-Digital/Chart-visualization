@@ -22,7 +22,7 @@ from .views import Dash_PoliticasManuais, Dash_PoliticasManuaisTabela
 from .views import Dash_CartaoNorma,Dash_TabelaNorma
 from .views import Dash_DemandasCartao,Dash_DemandasTabela
 from .views import Dash_ProcessoNivelRisco
-from .views import Teste_Index
+from .views import Dash_ProcessoNivelRiscoArea
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,6 +36,6 @@ urlpatterns = [
     path('DemandasCartao/',Dash_DemandasCartao),
     path('DemandasTabela/',Dash_DemandasTabela),
     path('ProcNivRisc/', Dash_ProcessoNivelRisco),
-    path('TesteIndex/', Teste_Index)
+    path('ProcNivRiscoArea/', Dash_ProcessoNivelRiscoArea)
 
 ]
