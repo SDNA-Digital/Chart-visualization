@@ -11,7 +11,8 @@ const concluidas = document.getElementById('Chart9');
 const ctx1 = document.getElementById('graph1');
 const ctx5 = document.getElementById('graph2');
 const ctx7 = document.getElementById('Card1');
-const ctx6 = document.getElementById('graph3')
+const ctx6 = document.getElementById('graph3');
+const ctx8 = document.getElementById('tabela4')
 const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
 const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessoxArea/"
 const endPoint3 = "http://127.0.0.1:8000/Card_Processos/"
@@ -20,6 +21,7 @@ const endPoint = "http://127.0.0.1:8000/Dash_IncidenteArea/"
 const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
 const normas = "http://127.0.0.1:8000/Dash_Normas/" 
 const RadarCon = "http://127.0.0.1:8000/Dash_RadarConformidade/"
+//const planos = 
 
 const legendas = []
 const CountAreas = []

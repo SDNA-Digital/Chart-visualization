@@ -131,21 +131,21 @@ body{
     margin-left: 25vw;
     justify-content: center;
     width: 50vw;
-    height: 25vw;
+    height: 35vw;
     display: inline-flex;
-    bottom: 40%;
+    bottom: 30%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1vw;
 }
 .cardelipse {
     position: absolute;
     margin: auto;
-    margin-bottom: 2vw;
+    margin-bottom: 8vw;
     justify-content: center;
     display: inline-flex;
     bottom: 0;
-    width: 25vw;
-    height: 13vw;
+    width: 28vw;
+    height: 15.5vw;
 }
 .cardvalue {
     position: absolute;
@@ -154,7 +154,7 @@ body{
     justify-content: center;
     display: inline-flex;
     bottom: 0;
-    font-size: 2.5vw;
+    font-size: 8vw;
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
