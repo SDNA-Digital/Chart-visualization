@@ -3,8 +3,14 @@ from django.shortcuts import render
 def Dash_ProcessoNivelRisco(request):
     return render(request, 'ProcNivRisc.html')
 
+def Dash_PlanosMitigantesStatus(request):
+    return render(request, 'PlanosMitigantesStatus.html')
+
 def Dash_ProcessoNivelRiscoArea(request):
     return render(request, 'ProcNivRiscoArea.html')
+
+def Card_ProcessosMapeados(request):
+    return render(request, 'ProcessosMapeados.html')
 
 def Teste_Index(request):
     return render(request, 'index.html')

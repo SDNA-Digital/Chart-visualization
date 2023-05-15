@@ -23,6 +23,8 @@ from .views import Dash_CartaoNorma,Dash_TabelaNorma
 from .views import Dash_DemandasCartao,Dash_DemandasTabela
 from .views import Dash_ProcessoNivelRisco
 from .views import Dash_ProcessoNivelRiscoArea
+from .views import Dash_PlanosMitigantesStatus
+from .views import Card_ProcessosMapeados
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,6 +38,8 @@ urlpatterns = [
     path('DemandasCartao/',Dash_DemandasCartao),
     path('DemandasTabela/',Dash_DemandasTabela),
     path('ProcNivRisc/', Dash_ProcessoNivelRisco),
-    path('ProcNivRiscoArea/', Dash_ProcessoNivelRiscoArea)
+    path('ProcNivRiscoArea/', Dash_ProcessoNivelRiscoArea),
+    path('PlanosMitigantesStatus/', Dash_PlanosMitigantesStatus),
+    path('Card_ProcessosMapeados/', Card_ProcessosMapeados)
 
 ]
