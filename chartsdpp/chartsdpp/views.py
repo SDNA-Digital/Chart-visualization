@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+
+
 def Chart(request):
     return render(request, 'index.html')
 
@@ -17,7 +19,6 @@ def Dash_PoliticasManuaisTabela(request):
 
 def Dash_CartaoNorma(request):
     return render(request, 'CartaoNorma.html')
-
 
 def Dash_TabelaNorma(request):
     return render(request, 'TabelaNorma.html')
