@@ -87,8 +87,19 @@ body{
     text-align: center;
     height: 90%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
+
+.Tabelas {
+    width: 95vw;
+    height: 30vw;
+    overflow-y:auto;
+    margin: auto;
+    top: 2.5vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    position: relative;
+}
+
 .CardStyleLine2 {
     display: inline-block;
     position: absolute;
@@ -106,13 +117,10 @@ body{
     max-height: 100%;
 }
 .string1 {
-    width: 100%;
     height: 1vw;
-    display: inline-flex;
-    justify-content: start;
-    font-size: 1.05vw;
+    justify-content: center;
+    font-size: 0.92vw;
     font-weight: bold;
-    margin-left: 20px;
     font-family: Arial, sans-serif;
 }
 .CardStyle .title {

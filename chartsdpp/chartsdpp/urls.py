@@ -25,6 +25,7 @@ from .views import Dash_ProcessoNivelRisco
 from .views import Dash_ProcessoNivelRiscoArea
 from .views import Dash_PlanosMitigantesStatus
 from .views import Card_ProcessosMapeados
+from .views import TabelaPlanosMitigantes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,6 +41,7 @@ urlpatterns = [
     path('ProcNivRisc/', Dash_ProcessoNivelRisco),
     path('ProcNivRiscoArea/', Dash_ProcessoNivelRiscoArea),
     path('PlanosMitigantesStatus/', Dash_PlanosMitigantesStatus),
-    path('Card_ProcessosMapeados/', Card_ProcessosMapeados)
+    path('Card_ProcessosMapeados/', Card_ProcessosMapeados),
+    path('TabelaPlanosMitigantes.html/', TabelaPlanosMitigantes)
 
 ]

@@ -21,7 +21,7 @@ const endPoint = "http://127.0.0.1:8000/Dash_IncidenteArea/"
 const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
 const normas = "http://127.0.0.1:8000/Dash_Normas/" 
 const RadarCon = "http://127.0.0.1:8000/Dash_RadarConformidade/"
-//const planos = 
+const planos = "http://127.0.0.1:8000/Tabela_Tarefas/"
 
 const legendas = []
 const CountAreas = []
@@ -81,6 +81,25 @@ const resultNormas = fetch(normas)
         const cell2 = newRow.insertCell()
         cell1.innerHTML = row.normanome
         cell2.innerHTML = row.qtusuario
+})
+})
+
+const resultplanos = fetch(planos)
+.then(res => res.json())
+.then(dados =>{
+    ctx8.innerHTML = dados.length
+    dados.forEach(row => {
+        const newRow = tabela.insertRow()
+        const cell1 = newRow.insertCell()
+        const cell2 = newRow.insertCell()
+        const cell3 = newRow.insertCell()
+        const cell4 = newRow.insertCell()
+        const cell5 = newRow.insertCell()
+        cell1.innerHTML = row.ID
+        cell2.innerHTML = row.Status
+        cell3.innerHTML = row.Plano
+        cell4.innerHTML = row.Area
+        cell5.innerHTML = row.Prazo
 })
 })
 

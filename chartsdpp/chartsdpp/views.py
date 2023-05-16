@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+def TabelaPlanosMitigantes(request):
+    return render(request, 'TabelaPlanosMitigantes.html')
+
 def Dash_ProcessoNivelRisco(request):
     return render(request, 'ProcNivRisc.html')
 
