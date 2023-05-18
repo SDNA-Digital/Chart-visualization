@@ -1,20 +1,102 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ProcNivRisc</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <div class="CardStyle">
-    <canvas id="graph4"></canvas>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="{% static 'js/scripts.js' %}"></script>
+    <div class="CardStyle">
+        <p class="title">Quantidade de processos por nível de risco (mês a mês)</p>
+        <canvas id="graph1"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+     integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+    
+    const ctx1 = document.getElementById('graph1');
+
+    const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
+
+    const result1 = fetch(endPoint1)
+    .then(response => response.json())
+    .then(data => {
+        const months = data.map(obj => obj.Mes)
+        const baixoData = data.map(obj => obj.Baixo)
+        const moderadoData = data.map(obj => obj.Moderado)
+        const altoData = data.map(obj => obj.Alto)
+        const muitoBaixoData = data.map(obj => obj['Muito Baixo'])
+        const muitoAltoData = data.map(obj => obj['Muito Alto'])
+        const chartData1 = {
+        labels: months,
+        datasets: [
+            {
+            label: 'Muito Baixo',
+            data: muitoBaixoData,
+            backgroundColor: '#66bfec',
+            },
+            {
+            label: 'Baixo',
+            data: baixoData,
+            backgroundColor: '#2499EA',
+            },
+            {
+            label: 'Moderado',
+            data: moderadoData,
+            backgroundColor: '#2483ea',
+            },
+            {
+            label: 'Alto',
+            data: altoData,
+            backgroundColor: '#2839d9',
+            },
+            {
+            label: 'Muito Alto',
+            data: muitoAltoData,
+            backgroundColor: '#0413a2',
+            },
+        ],
+        };
+    const chartConfig = {
+    type: 'bar',
+    data: chartData1,
+    options: {
+        responsive: true,
+        plugins: {
+            datalabels: {
+                display: true,
+                anchor: 'center',
+                align: 'center',
+                color: '#fff',
+            }
+        } ,
+        legend: {
+        position: 'top',
+        },
+        scales: {
+        x: {
+            stacked: true,
+        },
+        y: {
+            stacked: true,
+            ticks: {
+            beginAtZero: true,
+            },
+        },
+        },
+    plugins: [ChartDataLabels]
+    },
+    };
+    const myChart = new Chart(ctx1, chartConfig);
+})
+</script>
 </body>
 </html>
