@@ -210,6 +210,7 @@ let chart_3 = new Chart(ctx3, {
     }
     }
     });
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
 const result3 = fetch(endPoint3)
 .then(response => response.json())
 .then(data => {
@@ -290,7 +291,6 @@ const result1 = fetch(endPoint1)
     const graph1 = new chart_1(document.getElementById('graph1'), chartConfig);
 })
 .catch(error => console.error(error));
-///////////////////////////////////////
 
 let CardTitulo3 = "Quantidade de processos por nivel de risco x Area";
 let CardTituloDiv3 = document.getElementById("CardTituloDiv3");
