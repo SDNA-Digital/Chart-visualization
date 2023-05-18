@@ -11,14 +11,108 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+<div>
+    <div class="Cartao">
+        <p>Leis e Regulamentações Monitoradas</p>
+        <div id="Chart4" class="TextoCartao">
+        </div>
+    </div>
+    <div class="row border">
+        <div class="col">
+          <div class="Cartao">
+            <p>Demandas em atendimento</p>
+            <div id="Chart7" class="TextoCartao">
+            </div>
+        </div>
+        </div>
+        <div class="col">
+          <div class="Cartao">
+            <p>Demandas em atraso</p>
+            <div id="Chart8" class="TextoCartao">
+            </div>
+        </div>
+        </div>
+        <div class="col">
+          <div class="Cartao">
+            <p>Demandas concluídas</p>
+            <div id="Chart9" class="TextoCartao">
+            </div>
+        </div>
+  
+      </div>
+    </div>
+    <div class="tables">
+        <table  class="table table-striped" id="tabela">
+            <tr>
+              <td>ID</td>
+              <td>Solicitação</td>
+              <td>Responsável</td>
+              <td>Prazo</td>
+              <td>Status</td>
+            </tr>
+          </table>
+        </div>
+    <div class="container border">
+        <div class="Chart1">
+            <p>IncidentexArea</p>
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <div class="Chart2">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="CardStyle">
+        <p class="title">Planos mitigantes por status (mês a mês)</p>
+        <canvas id="graph3"></canvas>
+    </div>
+    <div class="Chart3">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="tables">
+        <table class="table table-striped" id="tabela3">
+            <tr>
+                <td>ID</td>
+                <td>Nome do Documento</td>
+                <td>Válido Até</td>
+            </tr>
+            </table>
+        </div>
     <section class="ContainerCard">
         <p class="title">Quantidade de processos Mapeados</p>
         <img class="cardelipse" src="{% static 'Assets/elipseG.png' %}" alt="elipseG1">
         <div class="cardvalue" id="Card1"></div>
     </section>
+    <div class="CardStyle">
+        <p class="title">Quantidade de processos por nível de risco (mês a mês)</p>
+        <canvas id="graph1"></canvas>
+    </div>
+    <div class="CardStyle">
+        <p class="title">Quantidade de processos por nível de risco x Area</p>
+        <canvas id="graph2"></canvas>
+    </div>
+    <div class="tables">
+        <table  class="table table-hover"  id="tabela4">
+            <tr>
+                <td>Nome da Lei/Regulamentação</td>
+                <td>Qtde Usuarios</td>
+            </tr>
+            </table>
+        </div>
+        <div class="Tabelas">
+            <table  class="table table-hover"  id="tabela">
+                <tr>
+                    <td class="string1">ID</td>
+                    <td class="string1">Plano</td>
+                    <td class="string1">Area Responsavel</td>
+                    <td class="string1">Status</td>
+                    <td class="string1">Prazo de conclusão</td>
+                </tr>
+                </table>
+            </div>
+</div>
 
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <script src="{% static 'js/scripts.js' %}"></script>
-         
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+        
 </body>
 </html>
