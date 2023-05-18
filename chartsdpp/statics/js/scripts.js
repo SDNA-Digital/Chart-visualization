@@ -287,7 +287,7 @@ const result1 = fetch(endPoint1)
         },
     },
     };
-    const graph1 = new chart(document.getElementById('graph1'), chartConfig);
+    const graph1 = new chart_1(document.getElementById('graph1'), chartConfig);
 })
 .catch(error => console.error(error));
 ///////////////////////////////////////

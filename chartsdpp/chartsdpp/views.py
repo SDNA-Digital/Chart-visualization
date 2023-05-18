@@ -3,6 +3,9 @@ from django.shortcuts import render
 def TabelaPlanosMitigantes(request):
     return render(request, 'TabelaPlanosMitigantes.html')
 
+def Home(request):
+    return render(request, 'home.html')
+
 def Dash_ProcessoNivelRisco(request):
     return render(request, 'ProcNivRisc.html')
 
@@ -14,12 +17,6 @@ def Dash_ProcessoNivelRiscoArea(request):
 
 def Card_ProcessosMapeados(request):
     return render(request, 'ProcessosMapeados.html')
-
-def Teste_Index(request):
-    return render(request, 'index.html')
-
-def Chart(request):
-    return render(request, 'index.html')
 
 def Dash_IncidenteArea(request):
     return render(request, 'IncidenteArea.html')
