@@ -12,7 +12,7 @@ const ctx1 = document.getElementById('graph1');
 const ctx5 = document.getElementById('graph2');
 const ctx7 = document.getElementById('Card1');
 const ctx6 = document.getElementById('graph3');
-const ctx8 = document.getElementById('tabela4')
+const tabela4 = document.getElementById('tabela4')
 const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
 const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessoxArea/"
 const endPoint3 = "http://127.0.0.1:8000/Card_Processos/"
@@ -87,9 +87,8 @@ const resultNormas = fetch(normas)
 const resultplanos = fetch(planos)
 .then(res => res.json())
 .then(dados =>{
-    ctx8.innerHTML = dados.length
     dados.forEach(row => {
-        const newRow = tabela.insertRow()
+        const newRow = tabela4.insertRow()
         const cell1 = newRow.insertCell()
         const cell2 = newRow.insertCell()
         const cell3 = newRow.insertCell()
@@ -216,16 +215,8 @@ const result3 = fetch(endPoint3)
 .then(data => {
     console.log(data)
 ctx7.innerHTML = data[0].Processos_mapeados
-let CardTitulo = "Quantidade de processos mapeados";
-let CardTituloDiv = document.getElementById("CardTituloDiv");
-
-CardTituloDiv.innerHTML = CardTitulo;
-
 })
-let CardTitulo2 = "Quantidade de processos por nivel de risco";
-let CardTituloDiv2 = document.getElementById("CardTituloDiv2");
 
-CardTituloDiv2.innerHTML = CardTitulo2;
 const result1 = fetch(endPoint1)
 .then(response => response.json())
 .then(data => {
@@ -288,14 +279,10 @@ const result1 = fetch(endPoint1)
         },
     },
     };
-    const graph1 = new chart_1(document.getElementById('graph1'), chartConfig);
+    const graph1 = new Chart(document.getElementById('graph1'), chartConfig);
 })
-.catch(error => console.error(error));
 
-let CardTitulo3 = "Quantidade de processos por nivel de risco x Area";
-let CardTituloDiv3 = document.getElementById("CardTituloDiv3");
 
-CardTituloDiv3.innerHTML = CardTitulo3;
 const result2 = fetch(endPoint2)
 .then(response => response.json())
 .then(data => {
@@ -376,10 +363,6 @@ const result2 = fetch(endPoint2)
 })
 .catch(error => console.error(error));
 
-let CardTitulo4 = "Quantidade de planos mitigantes por status";
-let CardTituloDiv4 = document.getElementById("CardTituloDiv4");
-
-CardTituloDiv4.innerHTML = CardTitulo4;
 const result4 = fetch(endPoint4)
 .then(response => response.json())
 .then(data => {
