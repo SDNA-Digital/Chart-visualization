@@ -12,101 +12,160 @@
 </head>
 <body>
   
-    <div class="container border p-5 text-left" style="gap: 60px;">
+    <div class="container">
       
-      Incidente X Area
-
-        <div class="row border row">
-          <div class="col border" id="teste">
-            <div class="Chart1">
-              <canvas id="myChart"></canvas>
+      <p class="TituloModulos">Incidente x Area</p>
+        <div class="row" style="border-top: 3px solid #3065E8; margin-bottom: 4%; padding-top: 2%;">
+          <div class="col">
+            <div class="CardStyle">
+              <p class="Titulo">Qtd de incidentes por área</p>
+                  <canvas id="myChart"></canvas>
+              </div>
+        </div>
+        <div class="col">
+          <div class="CardStyle">
+            <p class="Titulo">Qtd de incidentes por área</p>
+            <div class="containerPizza">
+                <canvas id="mySecondChart"></canvas> 
+            </div>
           </div>
-        </div>
-        <div class="col-4 border">
-          <div class="Chart2">
-            <canvas id="mySecondChart"></canvas> 
-        </div>
-    
-        </div>
+        </div>     
     </div>
-    <div class="row border">
-      <div class="col border">
-        <div class="Chart3">
-          <canvas id="mythirdChart"></canvas>
-        </div>
+    <div class="row" style="margin-bottom: 1%;">
+      <p class="TituloModulos">Governança</p>
+      <div class="col" style="border-top: 3px solid #3065E8; padding-top: 2%;">
+          <div class="CardStyle">
+            <p class="Titulo">Políticas e manuais vigentes</p>
+            <canvas id="mythirdChart"></canvas>
+          </div>
       </div>
-      <div class="col border">
-        <div class="Cartao">
-          <p>Leis e Regulamentações Monitoradas</p>
-          <div id="Chart4" class="TextoCartao">
+      <div class="col" style="border-top: 3px solid #3065E8; padding-top: 2%;">
+        <div class="CardStyle">
+          <p class="Titulo">Leis e Regulamentações Monitoradas</p>
+          <div id="Chart4" class="TextoCartaoRadar" style="margin-top: 18%;">
           </div>
       </div> 
       </div>
     </div>
-      <div class="row border">
-        <div class="tables">
-          <table  class="table table-hover"  id="tabela">
-              <tr>
-                <td>Nome da Lei/Regulamentação</td>
-                <td>Qtde Usuarios</td>
-              </tr>
-            </table>
-          </div>
+      <div class="row" style="margin-bottom: 1%;">
+        <div class="tables_container">
+          <p class="Titulo">Radar regulatório</p>
+          <div class="tables">
+            <table  class="table table-hover t"  id="tabela">
+                <tr>
+                  <th>Nome da Lei/Regulamentação</th>
+                  <th>Qtde Usuarios</th>
+                </tr>
+              </table>
+            </div>
+        </div>
       </div>     
-    <div class="row border">    
-      <div class="col border">
-        <div class="tables">
-          <table class="table table-striped" id="tabela2">
-              <tr>
-                <td>ID</td>
-                <td>Nome do Documento</td>
-                <td>Válido Até</td>
-              </tr>
-            </table>
-          </div>
+    <div class="row" style="margin-bottom: 4%;">    
+        <div class="tables_container">
+          <p class="Titulo">Políticas e manuais</p>
+          <div class="tables">
+            <table class="table table-hover t" id="tabela2">
+                <tr>
+                  <th>ID</th>
+                  <th>Nome do Documento</th>
+                  <th>Válido Até</th>
+                </tr>
+              </table>
+            </div>
       </div>
     </div>
-   
-    <div class="row border">
+    <p class="TituloModulos">Radar de conformidade</p>
+    <div class="row" style="border-top: 3px solid #3065E8; padding-top: 2%;">
       <div class="col">
-        <div class="Cartao">
-          <p>Demandas em atendimento</p>
+        <div class="CardStyle">
+          <p class="Titulo">Demandas em atendimento</p>
           <div id="Chart7" class="TextoCartao">
           </div>
       </div>
       </div>
       <div class="col">
-        <div class="Cartao">
-          <p>Demandas em atraso</p>
+        <div class="CardStyle">
+          <p class="Titulo">Demandas em atraso</p>
           <div id="Chart8" class="TextoCartao">
           </div>
       </div>
       </div>
       <div class="col">
-        <div class="Cartao">
-          <p>Demandas concluídas</p>
+        <div class="CardStyle">
+          <p class="Titulo">Demandas concluídas</p>
           <div id="Chart9" class="TextoCartao">
           </div>
       </div>
+    </div>
+  </div>
 
+  <div class="row" style="margin-top: 1%;margin-bottom: 4%;">
+    <div class="tables_container">
+      <p class="Titulo">Políticas e manuais</p>
+      <div class="tables">
+        <table class="table table-hover t" id="tabela3">
+          <tr>
+            <th>ID</th>
+            <th>Solicitação</th>
+            <th>Responsável</th>
+            <th>Prazo</th>
+            <th>Status</th>
+          </tr>
+          </table>
+        </div>
+  </div>
+</div>
+<p class="TituloModulos">Estratégicos</p>
+<div class="row"  style="border-top: 3px solid #3065E8; margin-top: 1%; padding-top: 2%;">
+  <div class="col">
+    <div class="CardStyle">
+      <p class="Titulo">Quantidade de processos por nível de risco (mês a mês)</p>
+     <canvas id="graph1"></canvas>
     </div>
-    <div class="row border">
-        <div class="tables">
-          <table  class="table table-striped" id="tabela3">
-              <tr>
-                <td>ID</td>
-                <td>Solicitação</td>
-                <td>Responsável</td>
-                <td>Prazo</td>
-                <td>Status</td>
-              </tr>
-            </table>
-          </div>
+  </div>
+  <div class="col">
+    <div class="CardStyle">
+      <p class="Titulo">Quantidade de processos Mapeados</p>
+      <div class="TextoCartaoRadar" id="Card1" style="margin-top: 18%;"></div>
+    </div> 
+  </div> 
+</div>
+<div class="row" style="margin-top: 1%;">
+  <div class="col">
+    <div class="CardStyle">
+      <p class="Titulo">Quantidade de processos por nível de risco x Área</p>
+      <canvas id="graph3"></canvas>
     </div>
-        
-   </div>
+  </div>
+  <div class="col">
+    <div class="CardStyle">
+      <p class="Titulo">Planos mitigantes por status (mês a mês)</p>
+      <canvas id="graph2"></canvas>
+    </div>
+  </div>
+</div>
+  <div class="row" style="margin-top: 1%;">
+    <div class="tables_container">
+    <p class="Titulo">Planos Mitigantes por status</p>
+    <div class="tables">
+      <table  class="table table-hover t"  id="tabela4">
+          <tr>
+            <th>ID</th>
+            <th>Plano</th>
+            <th>Area Responsavel</th>
+            <th>Status</th>
+            <th>Prazo de conclusão</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    </div>
+</div>
 
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+    integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="{% static 'js/scripts.js' %}"></script>
          
 </body>

@@ -8,7 +8,20 @@ const tabela3 = document.getElementById('tabela3');
 const Ematendimento = document.getElementById('Chart7');
 const Ematraso = document.getElementById('Chart8');
 const concluidas = document.getElementById('Chart9');
-
+const ctx1 = document.getElementById('graph1');
+const ctx5 = document.getElementById('graph2');
+const ctx7 = document.getElementById('Card1');
+const ctx6 = document.getElementById('graph3');
+const tabela4 = document.getElementById('tabela4')
+const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
+const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessoxArea/"
+const endPoint3 = "http://127.0.0.1:8000/Card_Processos/"
+const endPoint4 = "http://127.0.0.1:8000/Dash_PlanosMitigantes/"
+const endPoint = "http://127.0.0.1:8000/Dash_IncidenteArea/"
+const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
+const normas = "http://127.0.0.1:8000/Dash_Normas/" 
+const RadarCon = "http://127.0.0.1:8000/Dash_RadarConformidade/"
+const planos = "http://127.0.0.1:8000/Tabela_Tarefas/"
 
 const legendas = []
 const CountAreas = []
@@ -17,12 +30,6 @@ statTarefa = new Array ("","","Andamento","","Concluida")
 
 let nmbrStatus =[0,0,0]
 let nmbrStatusRadar =[0,0,0]
-
-
-const endPoint = "http://127.0.0.1:8000/dataJson/"
-const PoliManu = "http://127.0.0.1:8000/Dash_Politicas_Manuais/"
-const normas = "http://127.0.0.1:8000/Dash_Normas/" 
-const RadarCon = "http://127.0.0.1:8000/Dash_RadarConformidade/"
 
 const result = fetch(endPoint)
 
@@ -74,6 +81,24 @@ const resultNormas = fetch(normas)
         const cell2 = newRow.insertCell()
         cell1.innerHTML = row.normanome
         cell2.innerHTML = row.qtusuario
+})
+})
+
+const resultplanos = fetch(planos)
+.then(res => res.json())
+.then(dados =>{
+    dados.forEach(row => {
+        const newRow = tabela4.insertRow()
+        const cell1 = newRow.insertCell()
+        const cell2 = newRow.insertCell()
+        const cell3 = newRow.insertCell()
+        const cell4 = newRow.insertCell()
+        const cell5 = newRow.insertCell()
+        cell1.innerHTML = row.ID
+        cell2.innerHTML = row.Status
+        cell3.innerHTML = row.Plano
+        cell4.innerHTML = row.Area
+        cell5.innerHTML = row.Prazo
 })
 })
 
@@ -130,13 +155,32 @@ borderColor: '#000'
 }]
 },
 options: {
-scales: {
-y: {
-beginAtZero: true
-}
-}
-}
-});
+        
+    scales: {
+    y: {
+    beginAtZero: true
+    }
+    },
+    plugins: {
+          legend: {
+            display: false,
+            labels: {
+                font:{
+                    size: 50
+                }
+            }
+          },
+          datalabels:{
+            color: '#FFF',
+            font: {
+                size: 30
+            }
+          }
+    }
+    
+    },
+    plugins: [ChartDataLabels]
+    });
 
 let chart_2 = new Chart(ctx2, {
 type: 'doughnut',
@@ -177,10 +221,270 @@ let chart_3 = new Chart(ctx3, {
     }]
     },
     options: {
-    scales: {
-    y: {
-    beginAtZero: true
-    }
-    }
-    }
+        
+        scales: {
+        y: {
+        beginAtZero: true
+        }
+        },
+        plugins: {
+              legend: {
+                display: false,
+                labels: {
+                    font:{
+                        size: 50
+                    }
+                }
+              },
+              datalabels:{
+                color: '#FFF',
+                font: {
+                    size: 30
+                }
+              }
+        }
+        
+        },
+        plugins: [ChartDataLabels]
+        });
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+const result3 = fetch(endPoint3)
+.then(response => response.json())
+.then(data => {
+    console.log(data)
+ctx7.innerHTML = data[0].Processos_mapeados
+
+})
+
+const result1 = fetch(endPoint1)
+.then(response => response.json())
+.then(data => {
+    const months = data.map(obj => obj.Mes)
+    const baixoData = data.map(obj => obj.Baixo)
+    const moderadoData = data.map(obj => obj.Moderado)
+    const altoData = data.map(obj => obj.Alto)
+    const muitoBaixoData = data.map(obj => obj['Muito Baixo'])
+    const muitoAltoData = data.map(obj => obj['Muito Alto'])
+    const chartData1 = {
+    labels: months,
+    datasets: [
+        {
+        label: 'Muito Baixo',
+        data: muitoBaixoData,
+        backgroundColor: '#66bfec',
+        },
+        {
+        label: 'Baixo',
+        data: baixoData,
+        backgroundColor: '#2499EA',
+        },
+        {
+        label: 'Moderado',
+        data: moderadoData,
+        backgroundColor: '#2483ea',
+        },
+        {
+        label: 'Alto',
+        data: altoData,
+        backgroundColor: '#2839d9',
+        },
+        {
+        label: 'Muito Alto',
+        data: muitoAltoData,
+        backgroundColor: '#0413a2',
+        },
+    ],
+    };
+    const chartConfig = {
+    type: 'bar',
+    data: chartData1,
+    options: {
+        responsive: true,
+        plugins: {
+        legend: {
+            position: 'top',
+        },
+        datalabels:{
+            color: '#FFF',
+            font: {
+                size: 15
+            }
+          }
+        },
+        scales: {
+        x: {
+            stacked: true,
+        },
+        y: {
+            stacked: true,
+            ticks: {
+            beginAtZero: true,
+            },
+        },
+        },
+    },
+    plugins: [ChartDataLabels]
+    };
+    const graph1 = new Chart(document.getElementById('graph1'), chartConfig);
+})
+.catch(error => console.error(error));
+
+const result2 = fetch(endPoint2)
+.then(response => response.json())
+.then(data => {
+    const areasID =   {
+    1: 'Juridico',
+    2: 'Operacional',
+    3: 'Financeiro',
+    4: 'RH',
+    5: 'Comercial',
+    6: 'Administrativo'
+    };
+    data.forEach((obj) => {
+    obj.Area = areasID[obj.Area];
     });
+    const areas = data.map(obj => obj.Area)
+    const baixoData = data.map(obj => obj.Baixo)
+    const moderadoData = data.map(obj => obj.Moderado)
+    const altoData = data.map(obj => obj.Alto)
+    const muitoBaixoData = data.map(obj => obj['Muito Baixo'])
+    const muitoAltoData = data.map(obj => obj['Muito Alto'])
+    //graph1.update()
+
+    const chartData2 = {
+    labels: areas,
+    datasets: [
+        {
+        label: 'Muito Baixo',
+        data: muitoBaixoData,
+        backgroundColor: '#66bfec',
+        },
+        {
+        label: 'Baixo',
+        data: baixoData,
+        backgroundColor: '#2499EA',
+        },
+        {
+        label: 'Moderado',
+        data: moderadoData,
+        backgroundColor: '#2483ea',
+        },
+        {
+        label: 'Alto',
+        data: altoData,
+        backgroundColor: '#2839d9',
+        },
+        {
+        label: 'Muito Alto',
+        data: muitoAltoData,
+        backgroundColor: '#0413a2',
+        },
+    ],
+    };
+    const chartConfig = {
+    type: 'bar',
+    data: chartData2,
+    options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+        legend: {
+            position: 'top',
+        },
+        datalabels:{
+            color: '#FFF',
+            font: {
+                size: 20
+            }
+          }
+        },
+        scales: {
+        x: {
+            stacked: true,
+        },
+        y: {
+            stacked: true,
+            ticks: {
+            beginAtZero: true,
+            },
+        },
+        },
+    },
+    plugins: [ChartDataLabels]
+    };
+    const graph2 = new Chart(document.getElementById('graph2'), chartConfig);
+})
+.catch(error => console.error(error));
+
+const result4 = fetch(endPoint4)
+.then(response => response.json())
+.then(data => {
+    const months = data.map(obj => obj['mes_criacao'])
+    const naoiniciadoData = data.map(obj => obj['Nao iniciado'])
+    const emandamentoData = data.map(obj => obj['Em andamento'])
+    const emaprovacaoData = data.map(obj => obj['Em aprovacao'])
+    const concluidoData = data.map(obj => obj.Concluido)
+    const canceladoData = data.map(obj => obj.Cancelado)
+    const chartData3 = {
+    labels: months,
+    datasets: [
+        {
+        label: 'Nao iniciado',
+        data: naoiniciadoData,
+        backgroundColor: '#66bfec',
+        },
+        {
+        label: 'Em andamento',
+        data: emandamentoData,
+        backgroundColor: '#2499EA',
+        },
+        {
+        label: 'Em aprovacao',
+        data: emaprovacaoData,
+        backgroundColor: '#2483ea',
+        },
+        {
+        label: 'Concluido',
+        data: concluidoData,
+        backgroundColor: '#2839d9',
+        },
+        {
+        label: 'Cancelado',
+        data: canceladoData,
+        backgroundColor: '#d42f0c',
+        },
+    ],
+    };
+    const chartConfig = {
+        type: 'bar',
+        data: chartData3,
+        options: {
+            plugins: {
+                datalabels:{
+                    color: '#FFF',
+                    font: {
+                        size: 20
+                    }
+                  }
+                },
+            responsive: true,
+             scales: {
+            x: {
+            stacked: true,
+            },
+            y: {
+            stacked: true,
+            ticks: {
+                beginAtZero: true,
+            },
+            },
+        },
+        },
+        plugins: [ChartDataLabels],
+        legend: {
+        position: 'top',
+        }
+    };
+    const graph3 = new Chart(document.getElementById('graph3'), chartConfig);
+    })   
