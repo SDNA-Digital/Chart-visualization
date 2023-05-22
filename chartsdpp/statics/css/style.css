@@ -1,13 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body{
-    background-color: #F5F5F5;
+    background-color: aliceblue;
 }
 .Chart1 {
-    width: 700px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    background-color:#FFFFFF;
+    width: 100%;
+    height: 100%;
     text-align: center;
     padding-left: 25px;
     padding-right: 25px;

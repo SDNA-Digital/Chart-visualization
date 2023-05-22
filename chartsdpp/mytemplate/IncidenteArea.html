@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="container border">
-        <div class="Chart1">
-            <p>IncidentexArea</p>
+
+    <div class="ChartContainer">
+        <div class="Chart2">
+            <span class="Titulos">Qtd de incidentes por área</span>
             <canvas id="myChart"></canvas>
         </div>
     </div>
+        
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+    integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <Script>
 
@@ -26,6 +31,10 @@
         const CountAreas = []
 
         const endPoint = "http://127.0.0.1:8000/Dash_IncidenteArea/"
+
+        Chart.defaults.font.family = "sans-serif, 'Inter'"
+        
+        Chart.defaults.font.size = 16
 
         const result = fetch(endPoint)
 
@@ -46,14 +55,12 @@
     label:"IncidentexArea",
     data: CountAreas,
     borderWidth: 1,
-    backgroundColor: ['#95bfe6',
-                '#78aee2',
-                '#439cea',
-                '#348fdf',
-                '#2284d9',
-                '#006ac5',
-                ],
-    borderColor: '#000' 
+    backgroundColor: ['#66BFEC',
+                    '#2499EA',
+                    '#2483EA',
+                    '#2839D9',
+                    '#0413A2'
+                ]
     }]
     },
     options: {
@@ -65,11 +72,23 @@
     },
     plugins: {
           legend: {
-            display: false
+            display: false,
+            labels: {
+                font:{
+                    size: 50
+                }
+            }
+          },
+          datalabels:{
+            color: '#FFF',
+            font: {
+                size: 30
+            }
           }
     }
     
-    } 
+    },
+    plugins: [ChartDataLabels]
     });
 
     </Script>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 def TabelaPlanosMitigantes(request):
     return render(request, 'TabelaPlanosMitigantes.html')
 
