@@ -2,25 +2,18 @@ body{
     background-color: #F5F5F5;
 }
 .Chart1 {
-    width: 700px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
+    width: 44vw;
+    height: 38vw;
     background-color:#FFFFFF;
     text-align: center;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 25px;
-    padding-bottom: 30px;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .Chart2 {
-
-    width: 400px;
-    height: 400;
+    width: 35vw;
+    height: 400px;
     display: inline-block; 
-    margin: 30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -143,18 +136,17 @@ body{
     font-family: Arial, sans-serif;
 }
 .ContainerCard{
-    position: absolute;
-    margin-left: 25vw;
+    position: relative;
+    margin-left: 4vw;
     justify-content: center;
     width: 50vw;
     height: 35vw;
     display: inline-flex;
-    bottom: 30%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1vw;
 }
 .cardelipse {
-    position: absolute;
+    position: relative;
     margin: auto;
     margin-bottom: 8vw;
     justify-content: center;
@@ -179,9 +171,44 @@ body{
     height: 1.5vw;
     display: inline-flex;
     justify-content: center;
-    font-size: 1.5vw;
+    font-size: 1vw;
     font-weight: bold;
-    margin: auto;
     font-family: Arial, sans-serif;
     margin-top: 1vw;
+}
+
+.cardteste {
+    width: 100px;
+    height: 100px;
+}
+.tituloteste {
+    width: 25px;
+    font-size: 1vw;
+}
+.TituloModulos {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.ModuloLine {
+    width: 100vw;
+    max-width: 100%;
+    display: inline-flex;
+    height: 4vw;
+}
+.bodydiv {
+    position: absolute;
+    display: inline-flex;
+    gap: 2vw;
+    width: 100vw;
+    height: 1000px;
+    flex-direction: column;
+}
+.divline {
+    width: 100vw;
+    max-width: 100%;
+    height: 50vw;
+    gap: 20px;
+    justify-content: center;
+    display: inline-flex;
 }
