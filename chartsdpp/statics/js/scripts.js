@@ -12,7 +12,7 @@ const ctx1 = document.getElementById('graph1');
 const ctx5 = document.getElementById('graph2');
 const ctx7 = document.getElementById('Card1');
 const ctx6 = document.getElementById('graph3');
-const ctx8 = document.getElementById('tabela4')
+const tabela4 = document.getElementById('tabela4')
 const endPoint1 = "http://127.0.0.1:8000/Dash_Processo/"
 const endPoint2 = "http://127.0.0.1:8000/Dash_ProcessoxArea/"
 const endPoint3 = "http://127.0.0.1:8000/Card_Processos/"
@@ -87,9 +87,8 @@ const resultNormas = fetch(normas)
 const resultplanos = fetch(planos)
 .then(res => res.json())
 .then(dados =>{
-    ctx8.innerHTML = dados.length
     dados.forEach(row => {
-        const newRow = tabela.insertRow()
+        const newRow = tabela4.insertRow()
         const cell1 = newRow.insertCell()
         const cell2 = newRow.insertCell()
         const cell3 = newRow.insertCell()
@@ -156,13 +155,32 @@ borderColor: '#000'
 }]
 },
 options: {
-scales: {
-y: {
-beginAtZero: true
-}
-}
-}
-});
+        
+    scales: {
+    y: {
+    beginAtZero: true
+    }
+    },
+    plugins: {
+          legend: {
+            display: false,
+            labels: {
+                font:{
+                    size: 50
+                }
+            }
+          },
+          datalabels:{
+            color: '#FFF',
+            font: {
+                size: 30
+            }
+          }
+    }
+    
+    },
+    plugins: [ChartDataLabels]
+    });
 
 let chart_2 = new Chart(ctx2, {
 type: 'doughnut',
@@ -203,28 +221,42 @@ let chart_3 = new Chart(ctx3, {
     }]
     },
     options: {
-    scales: {
-    y: {
-    beginAtZero: true
-    }
-    }
-    }
-    });
+        
+        scales: {
+        y: {
+        beginAtZero: true
+        }
+        },
+        plugins: {
+              legend: {
+                display: false,
+                labels: {
+                    font:{
+                        size: 50
+                    }
+                }
+              },
+              datalabels:{
+                color: '#FFF',
+                font: {
+                    size: 30
+                }
+              }
+        }
+        
+        },
+        plugins: [ChartDataLabels]
+        });
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
 const result3 = fetch(endPoint3)
 .then(response => response.json())
 .then(data => {
     console.log(data)
 ctx7.innerHTML = data[0].Processos_mapeados
-let CardTitulo = "Quantidade de processos mapeados";
-let CardTituloDiv = document.getElementById("CardTituloDiv");
-
-CardTituloDiv.innerHTML = CardTitulo;
 
 })
-let CardTitulo2 = "Quantidade de processos por nivel de risco";
-let CardTituloDiv2 = document.getElementById("CardTituloDiv2");
 
-CardTituloDiv2.innerHTML = CardTitulo2;
 const result1 = fetch(endPoint1)
 .then(response => response.json())
 .then(data => {
@@ -273,6 +305,12 @@ const result1 = fetch(endPoint1)
         legend: {
             position: 'top',
         },
+        datalabels:{
+            color: '#FFF',
+            font: {
+                size: 15
+            }
+          }
         },
         scales: {
         x: {
@@ -286,16 +324,12 @@ const result1 = fetch(endPoint1)
         },
         },
     },
+    plugins: [ChartDataLabels]
     };
-    const graph1 = new chart(document.getElementById('graph1'), chartConfig);
+    const graph1 = new Chart(document.getElementById('graph1'), chartConfig);
 })
 .catch(error => console.error(error));
-///////////////////////////////////////
 
-let CardTitulo3 = "Quantidade de processos por nivel de risco x Area";
-let CardTituloDiv3 = document.getElementById("CardTituloDiv3");
-
-CardTituloDiv3.innerHTML = CardTitulo3;
 const result2 = fetch(endPoint2)
 .then(response => response.json())
 .then(data => {
@@ -358,6 +392,12 @@ const result2 = fetch(endPoint2)
         legend: {
             position: 'top',
         },
+        datalabels:{
+            color: '#FFF',
+            font: {
+                size: 20
+            }
+          }
         },
         scales: {
         x: {
@@ -371,15 +411,12 @@ const result2 = fetch(endPoint2)
         },
         },
     },
+    plugins: [ChartDataLabels]
     };
     const graph2 = new Chart(document.getElementById('graph2'), chartConfig);
 })
 .catch(error => console.error(error));
 
-let CardTitulo4 = "Quantidade de planos mitigantes por status";
-let CardTituloDiv4 = document.getElementById("CardTituloDiv4");
-
-CardTituloDiv4.innerHTML = CardTitulo4;
 const result4 = fetch(endPoint4)
 .then(response => response.json())
 .then(data => {
@@ -423,8 +460,16 @@ const result4 = fetch(endPoint4)
         type: 'bar',
         data: chartData3,
         options: {
-        responsive: true,
-        scales: {
+            plugins: {
+                datalabels:{
+                    color: '#FFF',
+                    font: {
+                        size: 20
+                    }
+                  }
+                },
+            responsive: true,
+             scales: {
             x: {
             stacked: true,
             },
@@ -442,4 +487,108 @@ const result4 = fetch(endPoint4)
         }
     };
     const graph3 = new Chart(document.getElementById('graph3'), chartConfig);
-    })   
+    })  
+
+    function exportar() {
+        var tagEspecifica = document.getElementById('tabela');
+      
+        if (tagEspecifica) {
+          var htmlContent = tagEspecifica.innerHTML;
+          var blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+          saveAs(blob, 'chart_export.html');
+        }
+      }
+
+      function exportar() {
+        const table = document.getElementById('tabela4');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportarLei() {
+        const table = document.getElementById('tabela');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportarPoliticas() {
+        const table = document.getElementById('tabela2');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportarDemandas() {
+        const table = document.getElementById('tabela3');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+
