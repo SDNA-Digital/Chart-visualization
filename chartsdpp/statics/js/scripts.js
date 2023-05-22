@@ -31,7 +31,7 @@ statTarefa = new Array ("","","Andamento","","Concluida")
 let nmbrStatus =[0,0,0]
 let nmbrStatusRadar =[0,0,0]
 
-const result = fecth(endPoint)
+const result = fetch(endPoint)
 
 .then(res => res.json())
 .then(dados =>{
