@@ -31,7 +31,7 @@ statTarefa = new Array ("","","Andamento","","Concluida")
 let nmbrStatus =[0,0,0]
 let nmbrStatusRadar =[0,0,0]
 
-const result = fetch(endPoint)
+const result = fecth(endPoint)
 
 .then(res => res.json())
 .then(dados =>{
@@ -487,4 +487,108 @@ const result4 = fetch(endPoint4)
         }
     };
     const graph3 = new Chart(document.getElementById('graph3'), chartConfig);
-    })   
+    })  
+
+    function exportar() {
+        var tagEspecifica = document.getElementById('tabela');
+      
+        if (tagEspecifica) {
+          var htmlContent = tagEspecifica.innerHTML;
+          var blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+          saveAs(blob, 'chart_export.html');
+        }
+      }
+
+      function exportar() {
+        const table = document.getElementById('tabela4');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportarLei() {
+        const table = document.getElementById('tabela');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportarPoliticas() {
+        const table = document.getElementById('tabela2');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function exportarDemandas() {
+        const table = document.getElementById('tabela3');
+        const rows = table.getElementsByTagName('tr');
+        const csvContent = [];
+        for (const row of rows) {
+            const rowData = [];
+            const cells = row.getElementsByTagName('td');
+            for (const cell of cells) {
+                rowData.push(cell.textContent);
+            }
+            csvContent.push(rowData.join(','));
+        }
+        const csvString = csvContent.join('\n');
+        const blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'table.csv';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+
